@@ -1,9 +1,14 @@
 import { Button } from 'antd';
+import { useHomeStore } from './store';
 
 export function Home() {
+  const { count, increment, clear } = useHomeStore();
+
   return (
     <div className="App">
-      <Button type="primary">Button</Button>
+      {count}
+      <Button type="primary" onClick={increment}>Button</Button>
+      <Button type="dashed" onClick={clear}>Clear</Button>
     </div>
   )
 }
